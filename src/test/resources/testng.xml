@@ -8,9 +8,13 @@
                     <include name="testSum"/>
                 </methods>
             </class>
-            <class name="tests.PriorityTest">
+            <class name="tests.PriorityTest"/>
         </classes>
     </test>
     <test name="Regression Test">
+    <classes>
+            <class name="tests.DependencyTest">
+            </class>
+        </classes>
     </test>
 </suite>
