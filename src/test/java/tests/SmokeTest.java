@@ -52,7 +52,7 @@ public class SmokeTest {
         driver.findElement(By.id("oAge")).sendKeys("38");
         driver.findElement(By.id("oWeight")).sendKeys("55");
         driver.findElement(By.id("oHeight")).sendKeys("163");
-        driver.findElement(By.cssSelector("type='button']")).click();
+        driver.findElement(By.cssSelector("[type=\"button\"]")).click();
 
         Assert.assertEquals(driver.findElement(By.id("txtMDRD")).getText(),
                 "MDRD: 74 (мл/мин/1,73кв.м)");
