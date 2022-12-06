@@ -13,12 +13,14 @@ public class SimpleWDTest {
         WebDriver driver = simpleDriver.getDriver();
         driver.quit();
     }
+
     @Test
     public void advancedWDTest() {
         AdvancedDriver advancedDriver = new AdvancedDriver();
         WebDriver driver = advancedDriver.getDriver();
         driver.quit();
     }
+
     @Test
     public void browserFactoryTest() {
         BrowserFactory browserFactory = new BrowserFactory();
