@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Main Suite" parallel="methods" thread-count="2">
-    <test name="Smoke">
+    <test name="UnitTest">
         <classes>
-            <class name="tests.Calculator">
-                <methods>
-                    <include name="testSum"/>
-                </methods>
-            </class>
-            <class name="tests.PriorityTest">
+            <class name="tests.CalculatorDivisionTest"/>
         </classes>
     </test>
     <test name="Regression Test">
+        <classes>
+            <class name="tests.DataProviderTest"></class>
+        </classes>
     </test>
 </suite>

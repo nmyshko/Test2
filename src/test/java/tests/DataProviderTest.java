@@ -5,10 +5,13 @@ import org.testng.annotations.Test;
 import tests.data.StaticProvider;
 
 public class DataProviderTest {
-    Calculator calculator = new Calculator();
-    @Test(dataProvider = "dataForSum", dataProviderClass = StaticProvider.class, threadPoolSize = 2)
-    public void testSum(int a, int b, int expected) {
-
-        Assert.assertEquals(calculator.sum(a, b), expected, "Неверная сумма!");
+    CalculatorDivision calculator = new CalculatorDivision();
+    @Test(dataProvider = "dataForDiv", dataProviderClass = StaticProvider.class, threadPoolSize = 2)
+    public void testDivInt(int a, int b, int expectedInt) {
+            Assert.assertEquals(calculator.divInt(a, b), expectedInt, "Неверное значение!");
+    }
+    @Test(dataProvider = "dataForDiv", dataProviderClass = StaticProvider.class, threadPoolSize = 2)
+    public void testDivDouble(double c, double d, double expectedDoble) {
+            Assert.assertEquals(calculator.divDouble(c, d), expectedDoble, "Неверное значение!");
     }
 }

@@ -5,7 +5,7 @@ import utils.Listener;
 
 @Listeners(Listener.class)
 public class BaseTest {
-    protected Calculator calculator = new Calculator();
+    protected CalculatorDivision calculator = new CalculatorDivision();
     public void beforeSuite() { System.out.println("BeforeSuite: ...");}
 
     @BeforeTest

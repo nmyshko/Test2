@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Main Suite">
-    <test name="Groups Tests">
+    <test name="GroupsOfCalculatorsTests">
         <groups>
-            <define name="Group1">
-                <include name="smoke"></include>
+            <define name="GroupOfInt">
+                <include name="divInt"/>
             </define>
-            <define name="Group2">
-                <include name="regression">
-
-                </include>
+            <define name="GroupOfDouble">
+                <include name="divDouble"></include>
+            </define>
+            <define name="GroupOfBoth">
+                <include name="divInt"/>
+                <include name="divDouble"/>
             </define>
             <run>
-                <include name="Group1"></include>
+                <include name="GroupOfDouble"></include>
             </run>
         </groups>
         <classes>
-            <class name="tests.GroupsTest"></class>
+            <class name="tests.CalculatorDivisionTest"></class>
         </classes>
     </test>
 </suite>
