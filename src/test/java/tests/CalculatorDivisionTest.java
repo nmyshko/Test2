@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CalculatorDivisionTest extends BaseTest {
 
-    @Test(priority = 0, groups = "divInt", description = "Этот тест проверяет деление целых чисел")
+    @Test(testName = "Деление целых чисел", priority = 0, groups = "divInt", description = "Этот тест проверяет деление целых чисел")
     public void testDivInt() {
         Assert.assertEquals(calculator.divInt(10, 2), 5, "Неверное значение!");
     }
@@ -49,7 +49,12 @@ public class CalculatorDivisionTest extends BaseTest {
     }
 
     @Test
-    public void testDivPoxDoubleByZero() {
+    public void testDivPozDoubleByZero() {
         Assert.assertEquals(Double.POSITIVE_INFINITY, 10.0 / 0);
+    }
+
+    @Test
+    public void testDivDoubleNaN() {
+        Assert.assertEquals(Double.NaN, 0.0 / 0);
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main Suite">
+    <parameter name="firstValue" value="10"></parameter>
+    <parameter name="secondValue" value="2"></parameter>
+    <test name="Smoke">
+        <classes>
+            <class name="tests.ParametrsTest"/>
+        </classes>
+    </test>
+</suite>
