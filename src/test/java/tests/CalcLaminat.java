@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -21,7 +22,9 @@ public class CalcLaminat {
     @Test
     public void CalcLaminat() throws InterruptedException {
         driver.get("https://calc.by/building-calculators/laminate.html");
+
         WebElement selectWebElement = driver.findElement(By.id("laying_method_laminate"));
+        selectWebElement.click();
         Select installLaminate = new Select(selectWebElement);
         installLaminate.selectByValue("1");
         Thread.sleep(1500);
@@ -59,9 +62,18 @@ public class CalcLaminat {
         indentWalls.sendKeys("9");
         Thread.sleep(1500);
 
+        WebElement directionsLaminate = driver.findElement(By.xpath("//*[text() ='по диагонали 45°']"));
+        directionsLaminate.click();
+        Thread.sleep(1500);
+
         WebElement resultButton = driver.findElement(By.className("calc-btn"));
         resultButton.click();
         Thread.sleep(3000);
+
+        Assert.assertEquals(driver.findElement(By.xpath("//*[starts-with(@style, 'padding:5px 0;font-size:22px; color:#C80303; font-weight:bold;')]")).getText(),
+                "97");
+        Assert.assertEquals(driver.findElement(By.xpath("//*[starts-with(@style, 'padding:5px 0;font-size:18px; color:#0E8C19; font-weight:bold;')]")).getText(),
+                "17");
     }
 
     @AfterMethod
