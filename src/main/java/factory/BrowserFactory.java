@@ -1,5 +1,6 @@
 package factory;
 
+
 import configuration.ReadProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
@@ -43,9 +44,9 @@ public class BrowserFactory {
     }
 
     public WebDriver getDriver() {
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); //по умолчанию 10сек
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 
         return driver;
     }
