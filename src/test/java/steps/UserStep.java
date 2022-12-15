@@ -2,33 +2,27 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.DashboardPage;
 import pages.LoginPage;
+import pages.ProductsPage;
 
 public class UserStep extends BaseStep {
     private LoginPage loginPage;
-
     public UserStep(WebDriver driver) {
         super(driver);
 
         loginPage = new LoginPage(driver);
     }
-
-    public void login(String email, String psw) {
-        loginPage.getEmailInput().sendKeys(email);
-        loginPage.getPassword().sendKeys(psw);
-        loginPage.getLogInButton().click();
+    public void login(String username, String psw) {
+        loginPage.getUserNameInput().sendKeys(username);
+        loginPage.getPasswordInput().sendKeys(psw);
+        loginPage.getLoginButton().click();
     }
-
-    public DashboardPage loginSuccessful(String email, String psw) {
-        login(email, psw);
-
-        return new DashboardPage(driver);
+    public ProductsPage loginSuccessful(String username, String psw) {
+        login(username,psw);
+        return new ProductsPage(driver);
     }
-
-    public LoginPage loginIncorrect(String email, String psw) {
-        login(email, psw);
-
+    public LoginPage loginIncorrect(String username, String psw) {
+        login(username,psw);
         return loginPage;
     }
 }

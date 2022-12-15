@@ -6,25 +6,31 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
-    // Блок описания локаторов для эментов
-    private final By emailInputLocator = By.id("name");
+    private final By userNameInputLocator = By.id("user-name");
     private final By passwordInputLocator = By.id("password");
-    private final By logInButtonLocator = By.id("button_primary");
-    private final By errorTextLocator = By.className("error-text");
+    private final By loginButtonLocator = By.id("login-button");
+    private final By errorTextLocator = By.xpath("//*[@data-test=\"error\"]");
 
-    // Блок иницализации страницы
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     protected By getPageIdentifier() {
-        return logInButtonLocator;
+        return loginButtonLocator;
     }
 
-    // Блок атомарных методов
-    public WebElement getEmailInput() { return driver.findElement(emailInputLocator);}
-    public WebElement getPassword() { return driver.findElement(passwordInputLocator);}
-    public WebElement getLogInButton() { return driver.findElement(logInButtonLocator);}
-    public WebElement getErrorTextElement() { return driver.findElement(errorTextLocator); }
+    public WebElement getUserNameInput() {
+        return driver.findElement(userNameInputLocator);
+    }
+    public WebElement getPasswordInput() {
+        return driver.findElement(passwordInputLocator);
+    }
+    public WebElement getLoginButton() {
+        return driver.findElement(loginButtonLocator);
+    }
+    public WebElement getErrorTextElement() {
+        return driver.findElement(errorTextLocator);
+    }
+
 }
