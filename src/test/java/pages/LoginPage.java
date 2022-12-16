@@ -9,7 +9,6 @@ public class LoginPage extends BasePage {
     private final By userNameInputLocator = By.id("user-name");
     private final By passwordInputLocator = By.id("password");
     private final By loginButtonLocator = By.id("login-button");
-    private final By errorTextLocator = By.xpath("//*[@data-test=\"error\"]");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -28,9 +27,6 @@ public class LoginPage extends BasePage {
     }
     public WebElement getLoginButton() {
         return driver.findElement(loginButtonLocator);
-    }
-    public WebElement getErrorTextElement() {
-        return driver.findElement(errorTextLocator);
     }
 
 }

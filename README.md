@@ -4,7 +4,6 @@
 4. Click the button LOGIN
 5. Click the "ADD TO CART" button that refers to "Sauce Labs Bolt T-Shirt" 
 6. Click the "cart" button in the upper right corner of the page
-7. Check the correspondence of the selected goods in the cart  (?)
 8. Click the "CHEKOUT" button
 9. Enter the first name "firstname" in the "first name" field 
 10. Enter the last name "lastname" in the "last name" field 
