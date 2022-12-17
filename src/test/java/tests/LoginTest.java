@@ -1,4 +1,5 @@
 package tests;
+
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import org.testng.Assert;
@@ -13,6 +14,5 @@ public class LoginTest extends BaseTest {
 
         Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password()).
                 isPageOpened());
-
     }
 }

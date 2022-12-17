@@ -12,7 +12,7 @@ public class YourCartPage extends BasePage {
     public WebElement getcheckoutButton() {
         return driver.findElement(checkoutButtonLocator);
     }
-    private final By yourCartLocator = By.xpath("//*[@class=\"title\"]");
+    private final By yourCartLocator = By.xpath("//*[@class='title' and text() = 'Your Cart']");
 
     public YourCartPage(WebDriver driver) {
         super(driver);

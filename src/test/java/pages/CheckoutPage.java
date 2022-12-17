@@ -10,6 +10,7 @@ public class CheckoutPage extends BasePage {
     private final By firstNameInputLocator = By.id("first-name");
     private final By lastNameInputLocator = By.id("last-name");
     private final By zipCodeInputLocator = By.id("postal-code");
+    private final By continueButtonLocator = By.id("continue");
 
     public WebElement getFirstNameInput() {
         return driver.findElement(firstNameInputLocator);
@@ -22,8 +23,11 @@ public class CheckoutPage extends BasePage {
     public WebElement getZipCodeInput() {
         return driver.findElement(zipCodeInputLocator);
     }
+    public WebElement getContinueButton() {
+        return driver.findElement(continueButtonLocator);
+    }
 
-    private final By checkoutPageLocator = By.xpath("//*[@class=\"title\"]");
+    private final By checkoutPageLocator = By.xpath("//*[@class='title' and text() = 'Checkout: Your Information']");
 
     @Override
     protected By getPageIdentifier() {

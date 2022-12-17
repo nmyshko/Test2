@@ -11,7 +11,7 @@ public class YourCartTest extends BaseTest {
     public void YourCartSuccessfulTest() {
         Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password()).
                 isPageOpened());
-        Assert.assertTrue(userStep.addToCartSuccessful().isPageOpened());
-        Assert.assertTrue(userStep.moveToChekckoutPageSuccessful().isPageOpened());
+        Assert.assertTrue(userStep.productsSuccessful().isPageOpened());
+        Assert.assertTrue(userStep.YourCartPageSuccessful().isPageOpened());
     }
 }

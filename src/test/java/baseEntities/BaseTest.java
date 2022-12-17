@@ -17,6 +17,7 @@ public class BaseTest {
         driver.get(ReadProperties.getUrl());
         userStep = new UserStep(driver);
     }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();

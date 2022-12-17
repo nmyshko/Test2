@@ -2,15 +2,15 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.CheckoutPage;
-import pages.LoginPage;
-import pages.ProductsPage;
-import pages.YourCartPage;
+import pages.*;
 
 public class UserStep extends BaseStep {
     private LoginPage loginPage;
     private ProductsPage productsPage;
     private YourCartPage yourCartPage;
+    private CheckoutPage checkoutPage;
+    private OverviewPage overviewPage;
+    private CheckoutCompletePage checkoutCompletePage;
 
 
     public UserStep(WebDriver driver) {
@@ -19,6 +19,9 @@ public class UserStep extends BaseStep {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
         yourCartPage = new YourCartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
+        overviewPage = new OverviewPage(driver);
+        checkoutCompletePage = new CheckoutCompletePage(driver);
 
     }
 
@@ -32,9 +35,17 @@ public class UserStep extends BaseStep {
         productsPage.getAddToCartButton().click();
         productsPage.getShoppingCartButton().click();
     }
-
     public void yourCartPage() {
         yourCartPage.getcheckoutButton().click();
+    }
+    public void checkoutInfo(String firstname, String lastname, String zipcode) {
+        checkoutPage.getFirstNameInput().sendKeys(firstname);
+        checkoutPage.getLastNameInput().sendKeys(lastname);
+        checkoutPage.getZipCodeInput().sendKeys(zipcode);
+        checkoutPage.getContinueButton().click();
+    }
+    public void finish() {
+        overviewPage.getFinishButton().click();
     }
 
     public ProductsPage loginSuccessful(String username, String psw) {
@@ -42,13 +53,26 @@ public class UserStep extends BaseStep {
         return new ProductsPage(driver);
     }
 
-    public YourCartPage addToCartSuccessful() {
+    public YourCartPage productsSuccessful() {
         products();
         return new YourCartPage(driver);
     }
 
-    public CheckoutPage moveToChekckoutPageSuccessful() {
+    public CheckoutPage YourCartPageSuccessful() {
         yourCartPage();
         return new CheckoutPage(driver);
+    }
+    public OverviewPage moveToOverviewPageSuccessful(String firstname, String lastname, String zipcode) {
+        checkoutInfo(firstname, lastname, zipcode);
+        return new OverviewPage(driver);
+    }
+
+    public CheckoutCompletePage finishIsSuccesful() {
+        finish();
+        return new CheckoutCompletePage(driver);
+    }
+    public boolean backHome() {
+        checkoutCompletePage.getBackHomeButton().click();
+        return true;
     }
 }
