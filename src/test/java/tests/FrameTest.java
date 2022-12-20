@@ -23,5 +23,6 @@ public class FrameTest extends BaseTest {
         driver.switchTo().defaultContent(); // Переключает в первоначальный документ
 
         driver.findElement(By.tagName("h3")).isDisplayed();
+
     }
 }
