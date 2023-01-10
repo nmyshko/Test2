@@ -2,7 +2,7 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
-import pages.project.AddProjectPage;
+import project.AddProjectPage;
 
 public class ProjectSteps extends BaseStep {
     private AddProjectPage addProjectPage;
