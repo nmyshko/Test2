@@ -1,4 +1,6 @@
 package tests;
+import baseEntities.BaseTest;
+import org.bouncycastle.crypto.agreement.jpake.JPAKERound1Payload;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +10,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.util.HashMap;
 
-public class FileDownloadTest {
+public class FileDownloadTest extends BaseTest {
 
     @Test
     public void fileDownload() throws Exception {
@@ -20,7 +22,8 @@ public class FileDownloadTest {
 
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", chromePrefs);
-        WebDriver driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
+
 
         driver.get("https://thelib.ru/books/mitchell_margaret/unesennye_vetrom.html");
 
@@ -28,7 +31,7 @@ public class FileDownloadTest {
 
         Thread.sleep(5000);
 
-        File downloadedFile = new File(fileDownloadPath + "\\Митчелл Маргарет. Унесенные ветром - TheLib.Ru.fb2.zip");
+        File downloadedFile = new File(fileDownloadPath + File.separator + "Митчелл Маргарет. Унесенные ветром - TheLib.Ru.fb2.zip");
         Assert.assertTrue(downloadedFile.exists());
 
         driver.quit();

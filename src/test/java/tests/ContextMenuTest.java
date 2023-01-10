@@ -15,7 +15,7 @@ public class ContextMenuTest extends BaseTest {
 
         driver.get("http://the-internet.herokuapp.com/context_menu");
 
-        WebElement contextMenuButton = driver.findElement(By.id("[id=hot-spot]"));
+        WebElement contextMenuButton = driver.findElement(By.id("hot-spot"));
 
         Actions action = new Actions(driver);
 
